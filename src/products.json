@@ -4,89 +4,99 @@
     "title": "Pulled Mooshie",
     "description": "Spicy vegan burger with jackfruit",
     "price": 200,
-    "img": "sin imagen",
+    "imagenes": [],
     "code": "abc123",
-    "stock": 25
+    "stock": 25,
+    "status": true
   },
   {
     "id": 2,
     "title": "Krabby Patty",
     "description": "The only people who don't like a Krabby Patty have never tasted one.",
     "price": 200,
-    "img": "sin imagen",
+    "imagenes": [],
     "code": "abc124",
-    "stock": 25
+    "stock": 25,
+    "status": true
   },
   {
     "id": 3,
     "title": "The Good Burger",
     "description": "Welcome to Good Burger, home of the Good Burger, can I take your order?",
     "price": 200,
-    "img": "sin imagen",
+    "imagenes": [],
     "code": "abc125",
-    "stock": 25
+    "stock": 25,
+    "status": true
   },
   {
     "id": 4,
     "title": "Crunchy Nacho Burger",
     "description": "The best combination of crunchiness and softness, all in one single burger",
     "price": 200,
-    "img": "sin imagen",
+    "imagenes": [],
     "code": "abc126",
-    "stock": 25
+    "stock": 25,
+    "status": true
   },
   {
     "id": 5,
     "title": "Barbie Burger",
     "description": "From a pink explosion was born Barbie Burger, a special edition in partnership with Mattel",
     "price": 200,
-    "img": "sin imagen",
+    "imagenes": [],
     "code": "abc127",
-    "stock": 25
+    "stock": 25,
+    "status": true
   },
   {
     "id": 6,
     "title": "Curry On My Wayward Bun",
     "description": "la mas ricarda, gordardo!",
     "price": 999999,
-    "img": "sin imagen",
+    "imagenes": [],
     "code": "abc128",
-    "stock": 300000
+    "stock": 300000,
+    "status": true
   },
   {
     "id": 7,
     "title": "MEISTER ALLER KLASSEN",
     "description": "Fast food joint located in a public toilet? Why on earth?!",
     "price": 200,
-    "img": "sin imagen",
+    "imagenes": [],
     "code": "abc129",
-    "stock": 25
+    "stock": 25,
+    "status": true
   },
   {
     "id": 8,
     "title": "Vegetarian Burger (Indian Style)",
     "description": "With summer around the corner, I had to share a vegetarian burger recipe with you guys. Actually I plan to share more in the next month but I thought I will start with this Indian style Vegetarian Burger aka Masala Burger!",
     "price": 200,
-    "img": "sin imagen",
+    "imagenes": [],
     "code": "abc130",
-    "stock": 25
+    "stock": 25,
+    "status": true
   },
   {
     "id": 9,
     "title": "Fat Santa",
     "description": "A Christmas themed burger",
     "price": 200,
-    "img": "sin imagen",
+    "imagenes": [],
     "code": "abc131",
-    "stock": 25
+    "stock": 25,
+    "status": true
   },
   {
     "id": 10,
     "title": "Blondie",
     "description": "Delicious steak burger",
     "price": 200,
-    "img": "sin imagen",
+    "imagenes": [],
     "code": "abc132",
-    "stock": 25
+    "stock":,
+    "status": true 25
   }
 ]
