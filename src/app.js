@@ -63,7 +63,6 @@ app.delete('/api/products/:id', async (req, res) => {
     }
 })
 
-
 app.post('/api/carts', async (req, res) => {
     try {
         const cart = await cartsManager.addCart(req.body);
@@ -81,6 +80,18 @@ app.get('/api/carts/:id', async (req, res) => {
         res.send(cart.products);
     } else {
         res.status(404).send("carrito no encontrado");
+    }
+})
+
+app.post('/api/carts/:id/product/:pid', async (req, res) => {
+    try {
+        const id = parseInt(req.params.id);
+        const pid = parseInt(req.params.pid);
+        const cart = await cartsManager.addProductToCart(id, pid);
+
+        res.send(cart);
+    } catch (error) {
+        res.status(400).send(error.message);   
     }
 })
 

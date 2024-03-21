@@ -41,6 +41,30 @@ class CartManager {
         return newCart;
     }
 
+    async addProductToCart(id, pid) {
+        const carts = await this.getCarts()
+        const cart = carts.find(cart => cart.id === id);
+
+        if (!cart) {
+            throw new Error("El carrito solicitado no existe");
+        }
+
+        const product = cart.products.find(product => product.product === pid);
+
+        if (product) {
+            product.quantity++;
+        } else {
+            cart.products.push({
+                product: pid,
+                quantity: 1
+            })
+        }
+
+        await this.setCarts(carts);
+
+        return cart;
+    }
+
     async updateCart(id, data) {
         const carts = await this.getCarts()
         const cart = carts.find(cart => cart.id === id);

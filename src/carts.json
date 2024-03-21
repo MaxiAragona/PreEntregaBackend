@@ -3,8 +3,12 @@
     "id": 1,
     "products": [
       {
-        "id": 1,
-        "quantity": 1
+        "product": 1,
+        "quantity": 3
+      },
+      {
+        "product": 2,
+        "quantity": 3
       }
     ]
   }
