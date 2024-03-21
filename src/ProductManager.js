@@ -90,12 +90,11 @@ class ProductManager {
         const productIndex = products.findIndex(product => product.id === id);
 
         if (productIndex < 0) {
-            console.error("No se ha encontrado el producto.");
-            return;
+            throw new Error("No se ha encontrado el producto.");
         }
 
         products.splice(productIndex, 1);
-       await this.setProducts(products);
+        await this.setProducts(products);
     }
 
     async getLastId(){

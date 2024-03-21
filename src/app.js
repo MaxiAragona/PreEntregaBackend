@@ -49,6 +49,16 @@ app.put('/products/:id', async (req, res) => {
     }
 })
 
+app.delete('/products/:id', async (req, res) => {
+    try {
+        const id = parseInt(req.params.id);
+        await manager.deleteProduct(id);
+        res.status(204).send();
+    } catch (error) {
+        res.status(400).send(error.message);   
+    }
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
