@@ -73,6 +73,17 @@ app.post('/api/carts', async (req, res) => {
     }
 })
 
+app.get('/api/carts/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
+    const cart = await cartsManager.getCartById(id);
+
+    if(cart) {
+        res.send(cart.products);
+    } else {
+        res.status(404).send("carrito no encontrado");
+    }
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
