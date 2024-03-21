@@ -1,15 +1,19 @@
 const ProductManager = require("./ProductManager")
+const CartManager = require("./CartManager")
 const express = require('express')
 const app = express()
 const port = 8080
 
 app.use(express.json());
 
-// creamos la instancia del manager
-const manager = new ProductManager("./src/maxProducts.json");
+// creamos la instancia del manager para los productos
+const productsManager = new ProductManager("./src/products.json");
 
-app.get('/products', async (req, res) => {
-    const products = await manager.getProducts();
+// creamos la instancia del manager para el carrito
+const cartsManager = new CartManager("./src/carts.json");
+
+app.get('/api/products', async (req, res) => {
+    const products = await productsManager.getProducts();
     let limit = parseInt(req.query.limit);
 
     if(isNaN(limit)){
@@ -19,9 +23,9 @@ app.get('/products', async (req, res) => {
     }
 })
 
-app.get("/products/:id", async (req, res) => {
+app.get('/api/products/:id', async (req, res) => {
     const id = parseInt(req.params.id);
-    const product = await manager.getProductById(id);
+    const product = await productsManager.getProductById(id);
 
     if(product) {
         res.send(product);
@@ -30,30 +34,40 @@ app.get("/products/:id", async (req, res) => {
     }
 })
 
-app.post('/products', async (req, res) => {
+app.post('/api/products', async (req, res) => {
     try {
-        const product = await manager.addProduct(req.body);
+        const product = await productsManager.addProduct(req.body);
         res.send(product);
     } catch (error) {
         res.status(400).send(error.message);   
     }
 })
 
-app.put('/products/:id', async (req, res) => {
+app.put('/api/products/:id', async (req, res) => {
     try {
         const id = parseInt(req.params.id);
-        const product = await manager.updateProduct(id, req.body);
+        const product = await productsManager.updateProduct(id, req.body);
         res.send(product);
     } catch (error) {
         res.status(400).send(error.message);   
     }
 })
 
-app.delete('/products/:id', async (req, res) => {
+app.delete('/api/products/:id', async (req, res) => {
     try {
         const id = parseInt(req.params.id);
-        await manager.deleteProduct(id);
+        await productsManager.deleteProduct(id);
         res.status(204).send();
+    } catch (error) {
+        res.status(400).send(error.message);   
+    }
+})
+
+
+app.post('/api/carts', async (req, res) => {
+    try {
+        const cart = await cartsManager.addCart(req.body);
+        res.send(cart);
     } catch (error) {
         res.status(400).send(error.message);   
     }
