@@ -1,13 +1,15 @@
 [
   {
     "id": 1,
-    "title": "Pulled Mooshie",
-    "description": "Spicy vegan burger with jackfruit",
+    "title": "prueba 1",
+    "description": "descripcion de prueba",
     "price": 200,
-    "imagenes": [],
-    "code": "abc123",
+    "imagenes": [
+      "mi imagen"
+    ],
+    "code": "abc12348",
     "stock": 25,
-    "status": true
+    "status": false
   },
   {
     "id": 2,

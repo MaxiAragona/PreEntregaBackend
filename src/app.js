@@ -39,6 +39,16 @@ app.post('/products', async (req, res) => {
     }
 })
 
+app.put('/products/:id', async (req, res) => {
+    try {
+        const id = parseInt(req.params.id);
+        const product = await manager.updateProduct(id, req.body);
+        res.send(product);
+    } catch (error) {
+        res.status(400).send(error.message);   
+    }
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })

@@ -56,17 +56,20 @@ class ProductManager {
         const product = products.find(product => product.id === id);
 
         if (!product) {
-            return;
+            throw new Error("El producto solicitado no existe");
         }
 
         product.title = data.title;
         product.description = data.description;
         product.price = data.price;
-        product.img = data.img;
+        product.imagenes = data.imagenes;
         product.code = data.code;
         product.stock = data.stock;
+        product.status = data.status;
 
         await this.setProducts(products);
+
+        return product;
     }
 
     async getProductById(id) {
