@@ -65,27 +65,6 @@ class CartManager {
         return cart;
     }
 
-    async updateCart(id, data) {
-        const carts = await this.getCarts()
-        const cart = carts.find(cart => cart.id === id);
-
-        if (!cart) {
-            throw new Error("El carrito solicitado no existe");
-        }
-
-        cart.title = data.title;
-        cart.description = data.description;
-        cart.price = data.price;
-        cart.imagenes = data.imagenes;
-        cart.code = data.code;
-        cart.stock = data.stock;
-        cart.status = data.status;
-
-        await this.setCarts(carts);
-
-        return cart;
-    }
-
     async getCartById(id) {
         const carts = await this.getCarts()
         const cart = carts.find(cart => cart.id === id);
@@ -97,18 +76,6 @@ class CartManager {
             console.log("Carto encontrado.", cart);
         }
         return cart;
-    }
-
-    async deleteCart(id) {
-        const carts = await this.getCarts();
-        const cartIndex = carts.findIndex(cart => cart.id === id);
-
-        if (cartIndex < 0) {
-            throw new Error("No se ha encontrado el carrito.");
-        }
-
-        carts.splice(cartIndex, 1);
-        await this.setCarts(carts);
     }
 
     async getLastId(){
